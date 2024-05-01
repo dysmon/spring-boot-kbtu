@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  soap-client:
+    image: soap-client:latest  # Assuming soap client image is already built
+    ports:
+      - "8081:8081"  # Example port mapping for soap client
+    depends_on:
+      - soap-producer
+
+  soap-producer:
+    image: soap-producer:latest
+    ports:
+      - "8080:8080"  # Port mapping for soap producer

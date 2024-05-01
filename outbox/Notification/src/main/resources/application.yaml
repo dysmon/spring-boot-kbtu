@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: notification
+  kafka:
+    consumer:
+      bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+
+notification:
+  order-created-kafka-topic: "order-created"
+  order-updated-kafka-topic: "order-updated"
+  group-id: "notification"
+
